@@ -68,7 +68,7 @@ function restart() {
     level = 0
     clicked.length = 0
     sequence.length = 0
-    level_title.innerText = 'Press Any Key to Start'
+    level_title.innerText = 'Press Any Button to Start'
 }
 
 // function to generate random sequence and apply level
@@ -92,7 +92,7 @@ function applySequence() {
             if(i === sequence.length-1) {
                 applyingSequence = false
             }
-        }, i*1000)
+        }, i*500)
     }
 }
 
@@ -100,6 +100,7 @@ function checkColor() {
     if(clicked[clicked.length - 1] !== sequence[clicked.length - 1]) {
         audio.src = './sounds/wrong.mp3'
         audio.play()
+        level_title.innerText = 'Game Over'
         applyRedBackground()
         setTimeout(() => {
             restart()
