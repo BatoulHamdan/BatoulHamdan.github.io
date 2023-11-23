@@ -104,7 +104,7 @@ function checkColor() {
         applyRedBackground()
         setTimeout(() => {
             restart()
-        }, 1000)
+        }, 500)
     }
     else if (clicked.length === sequence.length) {
         setTimeout(() => {
